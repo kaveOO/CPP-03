@@ -5,12 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: albillie <albillie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 02:11:30 by albillie          #+#    #+#             */
-/*   Updated: 2025/02/13 07:14:39 by albillie         ###   ########.fr       */
+/*   Created: 2025/02/13 08:56:36 by albillie          #+#    #+#             */
+/*   Updated: 2025/02/13 09:00:09 by albillie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
@@ -25,5 +26,15 @@ int main()
 	ClapTrap clapTroup;
 	clapTroup.takeDamage(15);
 	clapTroup.takeDamage(15000);
+
+	std::cout << std::endl;
+
+	ScavTrap thomas("thomiannnnnnnnnn");
+	thomas.attack("jbergos");
+	thomas.takeDamage(99);
+	thomas.beRepaired(34);
+	thomas.guardGuate();
+	std::cout << thomas << std::endl;
+
 	return 0;
 }
