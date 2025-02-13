@@ -6,7 +6,7 @@
 /*   By: albillie <albillie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 08:56:36 by albillie          #+#    #+#             */
-/*   Updated: 2025/02/13 11:03:50 by albillie         ###   ########.fr       */
+/*   Updated: 2025/02/13 19:59:10 by albillie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int main()
 	damian.highFivesGuys();
 	std::cout << damian << std::endl;
 	std::cout << std::endl;
+
+	DiamondTrap test;
 
 	return 0;
 }
