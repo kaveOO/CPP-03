@@ -1,4 +1,4 @@
-NAME		=	GbruscanVsGoblins
+name		=	GbruscanVsGoblins
 
 CPP			=	c++
 CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -g
@@ -8,10 +8,10 @@ SRC			=	main.cpp		\
 
 OBJ 		= $(SRC:.cpp=.o)
 
-$(NAME): $(OBJ)
-	$(CPP) $(CFLAGS) -o $(NAME) $(OBJ)
+$(name): $(OBJ)
+	$(CPP) $(CFLAGS) -o $(name) $(OBJ)
 
-all: $(NAME)
+all: $(name)
 
 %.o: %.cpp
 	$(CPP) $(CFLAGS) -c $< -o $@
@@ -20,7 +20,7 @@ clean:
 	$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(name)
 
 re: fclean all
 

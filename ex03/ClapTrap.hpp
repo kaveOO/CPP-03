@@ -19,7 +19,7 @@ class ClapTrap
 {
 	protected:
 		// Attributes
-		std::string Name;
+		std::string name;
 		int	hitPoints;
 		int energyPoints;
 		int attackDamage;

@@ -21,14 +21,11 @@ class FragTrap : public ClapTrap
 		// Canonical Form
 		FragTrap();
 		FragTrap(const FragTrap &FragTrap);
-		FragTrap(std::string Name);
+		FragTrap(std::string name);
 		FragTrap &operator=(const FragTrap &assign);
 		~FragTrap();
 		// Game Functions
 		void highFivesGuys(void);
-		void attack(const std::string &target);
-		void takeDamage(const unsigned int amount);
-		void beRepaired(const unsigned int amount);
 };
 
 std::ostream &operator<<(std::ostream &out, const FragTrap &FragTrap);

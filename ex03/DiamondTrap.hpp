@@ -27,8 +27,6 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		~DiamondTrap();
 		// Other Functions
 		DiamondTrap(std::string name);
-		void takeDamage(const unsigned int amount);
-		void beRepaired(const unsigned int amount);
 		using ScavTrap::attack;
 		void whoAmI();
 };

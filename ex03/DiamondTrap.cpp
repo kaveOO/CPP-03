@@ -40,7 +40,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &DiamondTrap)
 	return (*this);
 }
 
-DiamondTrap::DiamondTrap(std::string Name) : ClapTrap(Name + "_clap_name"), name(Name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), name(name)
 {
 	std::cout << "DiamondTrap, string constructor has been called" << std::endl;
 	setHitPoints(FragTrap::getHitPoints());
@@ -53,43 +53,9 @@ DiamondTrap::~DiamondTrap()
 	std::cout << "DiamondTrap has been destroyed !" << std::endl;
 }
 
-// Game Functions
-void DiamondTrap::takeDamage(const unsigned int amount)
-{
-	if (getHitPoints() <= 0)
-	{
-		std::cout << "DiamondTrap " << getName() << " is already dead and not able to take damage" << std::endl;
-		return ;
-	}
-	std::cout << "DiamondTrap " << getName() << " take " << amount << " points of damage" << std::endl;
-	setHitPoints(getHitPoints() - amount);
-	if (getHitPoints() <= 0)
-	{
-		std::cout << "DiamondTrap " << getName() << " just died after taking damage " << std::endl;
-	}
-}
-
-void DiamondTrap::beRepaired(const unsigned int amount)
-{
-	if (getHitPoints() <= 0)
-	{
-		std::cout << "DiamondTrap " << getName() << " is already dead and not able to get repaired" << std::endl;
-	}
-	else if (getEnergyPoints() <= 0)
-	{
-		std::cout << "DiamondTrap " << getName() << " is out of energy points and not able to repair himself" << std::endl;
-	}
-	else
-	{
-		std::cout << "DiamondTrap " << getName() << " just repaired himself and gained " << amount << " hit points" << std::endl;
-		setHitPoints(getHitPoints() + amount);
-		setEnergyPoints(getEnergyPoints() - 1);
-	}
-}
-
 void DiamondTrap::whoAmI()
 {
-	std::cout << this->name << " and " << ClapTrap::Name << std::endl;
+	std::cout << this->name << " and " << ClapTrap::name << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &out, const DiamondTrap &DiamondTrap)

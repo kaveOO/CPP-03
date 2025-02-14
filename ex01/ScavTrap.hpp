@@ -24,8 +24,6 @@ class ScavTrap : public ClapTrap
 		// Game Functions
 		void guardGuate();
 		void attack(const std::string &target);
-		void takeDamage(const unsigned int amount);
-		void beRepaired(const unsigned int amount);
 };
 
 std::ostream &operator<<(std::ostream &out, const ScavTrap &ScavTrap);

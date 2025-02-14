@@ -13,7 +13,7 @@
 #include "ClapTrap.hpp"
 
 // Canonical functions
-ClapTrap::ClapTrap() : Name("albillie"), hitPoints(10), energyPoints(10), attackDamage(0)
+ClapTrap::ClapTrap() : name("albillie"), hitPoints(10), energyPoints(10), attackDamage(0)
 {
 	std::cout << "Default construct has been called" << std::endl;
 }
@@ -21,7 +21,7 @@ ClapTrap::ClapTrap() : Name("albillie"), hitPoints(10), energyPoints(10), attack
 ClapTrap::ClapTrap(const ClapTrap &copy)
 {
 	std::cout << "Copy constructor has been called" << std::endl;
-	this->Name = copy.Name;
+	this->name = copy.name;
 	this->hitPoints = copy.hitPoints;
 	this->energyPoints = copy.energyPoints;
 	this->attackDamage = copy.attackDamage;
@@ -30,7 +30,7 @@ ClapTrap::ClapTrap(const ClapTrap &copy)
 ClapTrap &ClapTrap::operator=(const ClapTrap &assign)
 {
 	std::cout << "Copy assigment operator called" << std::endl;
-	this->Name = assign.Name;
+	this->name = assign.name;
 	this->hitPoints = assign.hitPoints;
 	this->energyPoints = assign.energyPoints;
 	this->attackDamage = assign.attackDamage;
@@ -45,7 +45,7 @@ ClapTrap::~ClapTrap()
 // Getters
 std::string ClapTrap::getName() const
 {
-	return (this->Name);
+	return (this->name);
 }
 
 int ClapTrap::getHitPoints() const
@@ -66,7 +66,7 @@ int ClapTrap::getAttackDamage() const
 // Setters
 void ClapTrap::setName(const std::string newName)
 {
-	this->Name = newName;
+	this->name = newName;
 }
 
 void ClapTrap::setHitPoints(const int newHitPoints)
@@ -85,24 +85,24 @@ void ClapTrap::setAttackDamage(const int newAttackDamage)
 }
 
 // Other functions
-ClapTrap::ClapTrap(std::string name) : Name(name), hitPoints(10), energyPoints(10), attackDamage(0)
+ClapTrap::ClapTrap(std::string name) : name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-	std::cout << "Name constructor has been called" << std::endl;
+	std::cout << "name constructor has been called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string &target)
 {
 	if (getHitPoints() <= 0)
 	{
-		std::cout << this->Name << " is already dead and not able to attack" << std::endl;
+		std::cout << this->name << " is already dead and not able to attack" << std::endl;
 	}
 	else if (getEnergyPoints() <= 0)
 	{
-		std::cout << this->Name << " is out of energy points and not able to attack" << std::endl;
+		std::cout << this->name << " is out of energy points and not able to attack" << std::endl;
 	}
 	else
 	{
-		std::cout << this->Name << " attacks " << target << ", causing " << this->attackDamage << " points of damage" << std::endl;
+		std::cout << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage" << std::endl;
 		this->energyPoints--;
 	}
 }
@@ -111,14 +111,14 @@ void ClapTrap::takeDamage(const unsigned int amount)
 {
 	if (getHitPoints() <= 0)
 	{
-		std::cout << this->Name << " is already dead and not able to take damage" << std::endl;
+		std::cout << this->name << " is already dead and not able to take damage" << std::endl;
 		return ;
 	}
-	std::cout << this->Name << " take " << amount << " points of damage" << std::endl;
+	std::cout << this->name << " take " << amount << " points of damage" << std::endl;
 	setHitPoints(getHitPoints() - amount);
 	if (getHitPoints() <= 0)
 	{
-		std::cout << this->Name << " just died after taking damage " << std::endl;
+		std::cout << this->name << " just died after taking damage " << std::endl;
 	}
 }
 
@@ -126,15 +126,15 @@ void ClapTrap::beRepaired(const unsigned int amount)
 {
 	if (getHitPoints() <= 0)
 	{
-		std::cout << this->Name << " is already dead and not able to get repaired" << std::endl;
+		std::cout << this->name << " is already dead and not able to get repaired" << std::endl;
 	}
 	else if (getEnergyPoints() <= 0)
 	{
-		std::cout << this->Name << " is out of energy points and not able to repair himself" << std::endl;
+		std::cout << this->name << " is out of energy points and not able to repair himself" << std::endl;
 	}
 	else
 	{
-		std::cout << this->Name << " just repaired himself and gained " << amount << " hit points" << std::endl;
+		std::cout << this->name << " just repaired himself and gained " << amount << " hit points" << std::endl;
 		setHitPoints(getHitPoints() + amount);
 		this->energyPoints--;
 	}

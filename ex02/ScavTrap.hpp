@@ -21,14 +21,12 @@ class ScavTrap : public ClapTrap
 		// Canonical Form
 		ScavTrap();
 		ScavTrap(const ScavTrap &scavTrap);
-		ScavTrap(std::string Name);
+		ScavTrap(std::string name);
 		ScavTrap &operator=(const ScavTrap &assign);
 		~ScavTrap();
 		// Game Functions
 		void guardGuate();
 		void attack(const std::string &target);
-		void takeDamage(const unsigned int amount);
-		void beRepaired(const unsigned int amount);
 };
 
 std::ostream &operator<<(std::ostream &out, const ScavTrap &ScavTrap);

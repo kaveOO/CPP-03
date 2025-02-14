@@ -21,7 +21,7 @@ class ScavTrap : virtual public ClapTrap
 		// Canonical Form
 		ScavTrap();
 		ScavTrap(const ScavTrap &scavTrap);
-		ScavTrap(std::string Name);
+		ScavTrap(std::string name);
 		ScavTrap &operator=(const ScavTrap &assign);
 		~ScavTrap();
 		// Game Functions

@@ -21,7 +21,7 @@ ScavTrap::ScavTrap() : ClapTrap("albillie")
 	std::cout << "ScavTrap default constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string Name) : ClapTrap(Name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
 	this->setHitPoints(100);
 	this->setEnergyPoints(50);
@@ -66,39 +66,6 @@ void ScavTrap::attack(const std::string &target)
 	else
 	{
 		std::cout << "ScavTrap " << getName() << " attacks " << target << ", causing " << getAttackDamage() << " points of damage" << std::endl;
-		setEnergyPoints(getEnergyPoints() - 1);
-	}
-}
-
-void ScavTrap::takeDamage(const unsigned int amount)
-{
-	if (getHitPoints() <= 0)
-	{
-		std::cout << "ScavTrap " << getName() << " is already dead and not able to take damage" << std::endl;
-		return ;
-	}
-	std::cout << "ScavTrap " << getName() << " take " << amount << " points of damage" << std::endl;
-	setHitPoints(getHitPoints() - amount);
-	if (getHitPoints() <= 0)
-	{
-		std::cout << "ScavTrap " << getName() << " just died after taking damage " << std::endl;
-	}
-}
-
-void ScavTrap::beRepaired(const unsigned int amount)
-{
-	if (getHitPoints() <= 0)
-	{
-		std::cout << "ScavTrap " << getName() << " is already dead and not able to get repaired" << std::endl;
-	}
-	else if (getEnergyPoints() <= 0)
-	{
-		std::cout << "ScavTrap " << getName() << " is out of energy points and not able to repair himself" << std::endl;
-	}
-	else
-	{
-		std::cout << "ScavTrap " << getName() << " just repaired himself and gained " << amount << " hit points" << std::endl;
-		setHitPoints(getHitPoints() + amount);
 		setEnergyPoints(getEnergyPoints() - 1);
 	}
 }

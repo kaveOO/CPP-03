@@ -21,7 +21,7 @@ class FragTrap : virtual public ClapTrap
 		// Canonical Form
 		FragTrap();
 		FragTrap(const FragTrap &FragTrap);
-		FragTrap(std::string Name);
+		FragTrap(std::string name);
 		FragTrap &operator=(const FragTrap &assign);
 		~FragTrap();
 		// Game Functions
