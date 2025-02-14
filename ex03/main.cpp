@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albillie <albillie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kaveo <kaveo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 08:56:36 by albillie          #+#    #+#             */
-/*   Updated: 2025/02/14 00:46:09 by albillie         ###   ########.fr       */
+/*   Updated: 2025/02/14 01:54:05 by kaveo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ int main()
 	// std::cout << damian << std::endl;
 	// std::cout << std::endl;
 
-	std::cout << std::endl;
-	DiamondTrap test("yo");
+	// std::cout << std::endl;
+	DiamondTrap test("test");
 
-	// test.whoAmI();
+	test.whoAmI();
 	// std::cout << test << std::endl;
 
 	return 0;

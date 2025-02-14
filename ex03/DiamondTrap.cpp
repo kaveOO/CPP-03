@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albillie <albillie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kaveo <kaveo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 19:34:00 by albillie          #+#    #+#             */
-/*   Updated: 2025/02/14 00:46:19 by albillie         ###   ########.fr       */
+/*   Updated: 2025/02/14 01:53:37 by kaveo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,36 +16,36 @@
 DiamondTrap::DiamondTrap() : ClapTrap("Default _clap_name"), name("Default")
 {
 	std::cout << "DiamondTrap, default constructor has been called" << std::endl;
-	DiamondTrap::setHitPoints(FragTrap::getHitPoints());
-	DiamondTrap::setEnergyPoints(ScavTrap::getEnergyPoints());
-	DiamondTrap::setAttackDamage(FragTrap::getAttackDamage());
+	setHitPoints(FragTrap::getHitPoints());
+	setEnergyPoints(ScavTrap::getEnergyPoints());
+	setAttackDamage(FragTrap::getAttackDamage());
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &DiamondTrap)
+DiamondTrap::DiamondTrap(const DiamondTrap &DiamondTrap) : ClapTrap(DiamondTrap), ScavTrap(DiamondTrap), FragTrap(DiamondTrap)
 {
 	std::cout << "DiamondTrap copy constructor has been called" << std::endl;
-	this->name = DiamondTrap.getName();
-	DiamondTrap::setHitPoints(DiamondTrap.getHitPoints());
-	DiamondTrap::setEnergyPoints(DiamondTrap.getEnergyPoints());
-	DiamondTrap::setAttackDamage(DiamondTrap.getAttackDamage());
+	this->attackDamage = DiamondTrap.attackDamage;
+	this->energyPoints = DiamondTrap.energyPoints;
+	this->hitPoints = DiamondTrap.hitPoints;
+	this->name = DiamondTrap.name;
 }
 
-DiamondTrap &DiamondTrap::operator=(const DiamondTrap &assign)
+DiamondTrap &DiamondTrap::operator=(const DiamondTrap &DiamondTrap)
 {
 	std::cout << "DiamondTrap assignment operator has been called" << std::endl;
-	this->name = assign.getName();
-	DiamondTrap::setHitPoints(assign.getHitPoints());
-	DiamondTrap::setEnergyPoints(assign.getEnergyPoints());
-	DiamondTrap::setAttackDamage(assign.getAttackDamage());
+	this->attackDamage = DiamondTrap.attackDamage;
+	this->energyPoints = DiamondTrap.energyPoints;
+	this->hitPoints = DiamondTrap.hitPoints;
+	this->name = DiamondTrap.name;
 	return (*this);
 }
 
-DiamondTrap::DiamondTrap(std::string Name) : name(Name)
+DiamondTrap::DiamondTrap(std::string Name) : ClapTrap(Name + "_clap_name"), name(Name)
 {
 	std::cout << "DiamondTrap, string constructor has been called" << std::endl;
-	DiamondTrap::setHitPoints(DiamondTrap::getHitPoints());
-	DiamondTrap::setEnergyPoints(DiamondTrap::getEnergyPoints());
-	DiamondTrap::setAttackDamage(DiamondTrap::getAttackDamage());
+	setHitPoints(FragTrap::getHitPoints());
+	setEnergyPoints(ScavTrap::getEnergyPoints());
+	setAttackDamage(FragTrap::getAttackDamage());
 }
 
 DiamondTrap::~DiamondTrap()
@@ -89,7 +89,7 @@ void DiamondTrap::beRepaired(const unsigned int amount)
 
 void DiamondTrap::whoAmI()
 {
-	std::cout << this->name << " and " << ClapTrap::getName() << std::endl;
+	std::cout << this->name << " and " << ClapTrap::Name << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &out, const DiamondTrap &DiamondTrap)

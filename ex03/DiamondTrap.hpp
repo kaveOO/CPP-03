@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albillie <albillie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kaveo <kaveo@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 11:08:52 by albillie          #+#    #+#             */
-/*   Updated: 2025/02/14 00:18:37 by albillie         ###   ########.fr       */
+/*   Updated: 2025/02/14 01:46:33 by kaveo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		DiamondTrap &operator=(const DiamondTrap &assign);
 		~DiamondTrap();
 		// Other Functions
-		DiamondTrap(const std::string name);
+		DiamondTrap(std::string name);
 		void takeDamage(const unsigned int amount);
 		void beRepaired(const unsigned int amount);
 		using ScavTrap::attack;
