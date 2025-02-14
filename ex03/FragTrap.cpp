@@ -6,7 +6,7 @@
 /*   By: albillie <albillie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 07:43:36 by albillie          #+#    #+#             */
-/*   Updated: 2025/02/13 10:53:24 by albillie         ###   ########.fr       */
+/*   Updated: 2025/02/13 23:25:34 by albillie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ FragTrap::~FragTrap()
 FragTrap &FragTrap::operator=(const FragTrap &assign)
 {
 	ClapTrap::operator=(assign);
-	std::cout << "Scav Trap copy assigment operator called" << std::endl;
+	std::cout << "FragTrap copy assigment operator called" << std::endl;
 	return (*this);
 }
 
